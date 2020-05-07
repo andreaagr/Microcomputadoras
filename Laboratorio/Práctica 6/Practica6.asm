@@ -1,7 +1,7 @@
 ;	#########################################################################################################################################
 ;	#                                                                                                                                       #
 ;	#  Programa recibe una cadena a partir del puerto serial y la compara con la cadena "PUMAS", cuando la cadena coincide se enciende un   #
-;	#  led conectado al pin RB0 y se envï¿½a la palabra "OK" por el puerto serial. De lo contrario se apaga el led y se envía la cadena     #
+;	#  led conectado al pin RB0 y se envÃ¯Â¿Â½a la palabra "OK" por el puerto serial. De lo contrario se apaga el led y se envÃ­a la cadena     #
 ;	#  "ERROR"                                                                                                                              #
 ;	#                                                                                                                                       #
 ;	#########################################################################################################################################
@@ -20,36 +20,36 @@
 		GOTO 5
 		ORG 5
 
-		;------------------------------------------------------------------------------------------------------Configuración del puerto B
+		;------------------------------------------------------------------------------------------------------ConfiguraciÃ³n del puerto B
 		BSF STATUS,RP0 			;Pasamos al banco 1 donde se encuentran los TRIS
-		CLRF TRISB              	;El pin RB0 será salida
-		;-------------------------------------------------------------------------------------------------Configuración del puerto serial
+		CLRF TRISB              	;El pin RB0 serÃ¡ salida
+		;-------------------------------------------------------------------------------------------------ConfiguraciÃ³n del puerto serial
 		;-----------------------------------Para 9600 Bauds con Fosc = 4 Mhz -> BRGH = 1, BRG16 = 0, SYNC = 0, SPRGH = 0x00 , SPRG = 0x19
 		BSF TXSTA,BRGH 			;Pone el bit BRGH = 1
 		MOVLW 0x19			;Carga un 0x19 en SPRG
 		MOVWF SPBRG 			;
 		CLRF SPBRGH		    	;Limpia SPRGH, que es equivalente a SPRGH <- 0x00
-		BCF TXSTA,SYNC 			;Limpia el bit SYNC (Indica modo asíncrono)
+		BCF TXSTA,SYNC 			;Limpia el bit SYNC (Indica modo asÃ­ncrono)
 		BSF STATUS,RP1			;Pasamos al banco 3
 		BCF BAUDCTL,BRG16		;El bit BRG16 se pone a 0
 		;--------------------------------------------------------------------------------------------------------------------------------
-		;-------------------------------------------------------------------------Habilita el puerto serie, la recepción y la transmisión
+		;-------------------------------------------------------------------------Habilita el puerto serie, la recepciÃ³n y la transmisiÃ³n
 		BCF STATUS,RP1			;Volvemos al banco 1
-		BSF TXSTA,TXEN 			;Pone bit TXEN = 1 (Habilita transmisión)}
+		BSF TXSTA,TXEN 			;Pone bit TXEN = 1 (Habilita transmisiÃ³n)}
 		BCF STATUS,RP0 			;Regresa al banco 0
 		BSF RCSTA,SPEN 			;Pone bit SPEN=1 (Habilita puerto serie)
-		BSF RCSTA,CREN 			;Habilita recepción
+		BSF RCSTA,CREN 			;Habilita recepciÃ³n
 		;--------------------------------------------------------------------------------------------------------------------------------
-		;--------------------------------------------------------------------Indica que se recibirán caracteres hasta encontrar <ESPACIO>
+		;--------------------------------------------------------------------Indica que se recibirÃ¡n caracteres hasta encontrar <ESPACIO>
 MAIN:
 		CLRF 0x22
-		MOVLW 0x22				;Inicializa FSR en la localidad 0x22
+		MOVLW 0x22			;Inicializa FSR en la localidad 0x22
 		MOVWF FSR
 
 RECEPCION:
-		CALL RECIBE			 	;Recibe dato
-		MOVLW .32				;Carga código ASCII de <ESPACIO>
-		SUBWF INDF,W			;¿Es igual?
+		CALL RECIBE			;Recibe dato
+		MOVLW .32			;Carga cÃ³digo ASCII de <ESPACIO>
+		SUBWF INDF,W			;Â¿Es igual?
 		BTFSC STATUS,Z			;
 		GOTO COMPARA 			;Si es igual salta a COMPARA
 		GOTO CONTINUA			;En caso contrario...
@@ -57,7 +57,7 @@ RECEPCION:
 		;--------------------------------------------------------------------------------------------------------------------------------
 		;----------------------------------------------------------------------------------------------Subrutina para recibir un caracter
 RECIBE:
-		BTFSS PIR1,RCIF 		;Checa el buffer de recepción
+		BTFSS PIR1,RCIF 		;Checa el buffer de recepciÃ³n
 		GOTO RECIBE 			;Si no hay dato listo espera
 		MOVF RCREG,W 			;Si hay dato, lo lee
 		MOVWF INDF 		        ;y lo almacena en la localidad actual que apunte FSR
@@ -67,38 +67,38 @@ RECIBE:
 		;-------------------------------------------Subrutina para transmitir un caracter (El caracter a transmitir debe encontrarse en W)
 
 TRANSMITE:
-		BSF STATUS,RP0 	        ;Se mueve al banco 1
+		BSF STATUS,RP0 	        	;Se mueve al banco 1
 ESPERA:
-		BTFSS TXSTA,TRMT 	    ;Checa el buffer de transmisión
+		BTFSS TXSTA,TRMT 	    	;Checa el buffer de transmisiÃ³n
 		GOTO ESPERA 			;Si esta ocupado, espera
 		BCF STATUS,RP0 			;Regresa al banco 0
-		MOVWF TXREG 			;Lo envía
-		RETURN					;Regresa a recepción
+		MOVWF TXREG 			;Lo envÃ­a
+		RETURN				;Regresa a recepciÃ³n
 		;--------------------------------------------------------------------------------------------------------------------------------
-		;----------------------------------------------------Aumenta el tamaño del arreglo y coloca el apuntador en la siguiente posición
+		;----------------------------------------------------Aumenta el tamaÃ±o del arreglo y coloca el apuntador en la siguiente posiciÃ³n
 CONTINUA:
 		MOVF DATO,W
 		;CALL TRANSMITE
-		INCF TAM,F				;Aumenta el tamaño del arreglo
-		INCF FSR,F				;Apunta a la siguiente localidad
+		INCF TAM,F			;Aumenta el tamaÃ±o del arreglo
+		INCF FSR,F			;Apunta a la siguiente localidad
 		GOTO RECEPCION			;Sigue recibiendo caracteres
 		;--------------------------------------------------------------------------------------------------------------------------------
 		;----------------------------------------------------------Evalua si la cadena recibida es igual a la cadena contenida en PALABRA
 COMPARA:
 		MOVLW 0x22
-		MOVWF FSR 				;Se inicia el apuntador para recorrer la cadena recibida
-		INCF TAM,F				;Aumenta la posición en uno, por el decremento
+		MOVWF FSR 			;Se inicia el apuntador para recorrer la cadena recibida
+		INCF TAM,F			;Aumenta la posiciÃ³n en uno, por el decremento
 		
 EVALUA:
-		DECFSZ TAM,F			;Mientras que no se llegue a 0,se va decrementando la variable tamaño
-		GOTO SIGUIENTE			;Si aún no se llega a cero, sigue evaluando
-		GOTO IGUAL				;Si ya llegamos a cero, podemos decir que las cadenas son iguales
+		DECFSZ TAM,F			;Mientras que no se llegue a 0,se va decrementando la variable tamaÃ±o
+		GOTO SIGUIENTE			;Si aÃºn no se llega a cero, sigue evaluando
+		GOTO IGUAL			;Si ya llegamos a cero, podemos decir que las cadenas son iguales
 
 SIGUIENTE:
 		
 		CALL PALABRA			;Obtiene el siguiente caracter de la cadena "PUMAS" y lo guarda en W
 		SUBWF INDF,W			;Lo compara con el caracter a donde apunta FSR
-		BTFSS STATUS,Z 			;¿Son iguales?
+		BTFSS STATUS,Z 			;Â¿Son iguales?
 		GOTO DIFERENTE			;Si no son iguales, ve a DIFERENTE
 		GOTO AUMENTA			;Si son iguales sigue comparando
 

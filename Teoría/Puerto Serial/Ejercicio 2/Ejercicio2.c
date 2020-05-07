@@ -2,7 +2,7 @@
     Implementa un sistema que funciona como un interprete de comandos, con dos comandos, uno para apagar leds y otro para encenderlos,
     por ejemplo:
 
-	                             leds on			-->		todos los leds conectados al puerto B encendidos
+	                             leds on		  -->		todos los leds conectados al puerto B encendidos
 	                             leds off		  -->		todos los leds conectados al puerto B apagados
 
     Si el microcontrolador reconoce el comando, realizará la tarea correspondiente (prender/apagar los leds) y responderá hacia la terminal

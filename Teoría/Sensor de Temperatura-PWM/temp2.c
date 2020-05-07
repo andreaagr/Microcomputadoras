@@ -8,7 +8,7 @@ temperatura: 20° -> 0 % PWM, 30° -> 100 % PWM. La relación para los demás va
 #include <16F877A.h>
 #device adc = 10
 #fuses XT,NOWDT
-#use delay(clock= 20M) //Reloj de 20MHz
+#use delay(clock= 20M)                                    //Reloj de 20MHz
 #include <lcd.c>
 #define ctePWM 260                                        //Valor máximo del PWM
 

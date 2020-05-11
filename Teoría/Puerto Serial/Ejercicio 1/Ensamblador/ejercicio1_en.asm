@@ -21,6 +21,9 @@ start
       MOVLW 0x24						;0010 0100 Permite la transmisión en velocidad alta, 8 bits y modo asíncrono
       MOVWF TXSTA						;Configura lo anterior en el registro TXSTA
       CLRF TRISB						;Indica que el puerto B será una salida
+			;BSF STATUS,RP1			  ;Pasamos al banco 3
+			;BCF BAUDCTL,BRG16		  ;El bit BRG16 se pone a 0
+			;BCF STATUS,RP1
       BCF STATUS, RP0				;Regresa al banco 0
       MOVLW 0x90						;1001 0000 Activa la transmisión por puerto serial
       MOVWF RCSTA						;Configura lo anterior en el registro RCSTA

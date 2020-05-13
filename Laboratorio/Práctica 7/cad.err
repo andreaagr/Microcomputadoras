@@ -1,0 +1,22 @@
+Message[301] C:\PROGRAM FILES (X86)\MICROCHIP\MPASM SUITE\P16F886.INC 33 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Warning[207] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 14 : Found label after column 1. (VALOR)
+Warning[207] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 15 : Found label after column 1. (apuntador)
+Warning[207] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 16 : Found label after column 1. (tam)
+Warning[207] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 18 : Found label after column 1. (DCounter1)
+Warning[207] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 19 : Found label after column 1. (DCounter2)
+Warning[207] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 20 : Found label after column 1. (DCounter3)
+Warning[207] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 21 : Found label after column 1. (DCounter4)
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 34 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 35 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 38 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 40 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 41 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[202] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 58 : Argument out of range.  Least significant bits used.
+Message[305] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 59 : Using default destination of 1 (file).
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 91 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 93 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 94 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 95 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 97 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 101 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SECTEI_7\DESKTOP\MICROCOMPUTADORAS\LABORATORIO\PR·CTICA 7\CAD.ASM 110 : Register in operand not in bank 0.  Ensure that bank bits are correct.

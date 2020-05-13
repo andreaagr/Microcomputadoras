@@ -31,26 +31,26 @@
 
       CALL CONFIG_USART
       ;--------------------------------------------------------------------Configuración del puerto B
-      BSF STATUS,RP0 			;Pasamos al banco 1 donde se encuentran los TRIS
-      CLRF TRISB          ;El pin RB0 será salida
-      BSF TRISA,0 				;Configura como entrada el pin RA0
+      BSF STATUS,RP0 	  	;Pasamos al banco 1 donde se encuentran los TRIS
+      CLRF TRISB          	;El pin RB0 será salida
+      BSF TRISA,0 	  	;Configura como entrada el pin RA0
       ;----------------------------------------------------------------------------------------------
       ;-------------------------------------------------------------------------Configuración del CAD
-      CLRF ADCON1         ;Los voltajes de referencia serán internos y la justificación izquierda
-      BSF STATUS,RP1 			;Banco 3
-      BSF ANSEL,ANS0			;Configura el pin RA0 como entrada analógica
+      CLRF ADCON1         	;Los voltajes de referencia serán internos y la justificación izquierda
+      BSF STATUS,RP1 	  	;Banco 3
+      BSF ANSEL,ANS0	  	;Configura el pin RA0 como entrada analógica
       ;CLRF ANSELH
 
-      BCF STATUS,RP0			;
-      BCF STATUS,RP1      ;Banco 0
-      MOVLW 0x41				 	;0100 0001 -> Selecciona el canal AN0, reloj de conversión Fosc/8
-      MOVWF ADCON0 				;y enciende el convertidor
+      BCF STATUS,RP0		;
+      BCF STATUS,RP1      	;Banco 0
+      MOVLW 0x41	  	;0100 0001 -> Selecciona el canal AN0, reloj de conversión Fosc/8
+      MOVWF ADCON0 	  	;y enciende el convertidor
       ;----------------------------------------------------------------------------------------------
       ;-----------------------------------------------------------------------------Sección principal
 MAIN:
       CLRF apuntador
       CALL DELAY_20_us          ;Espera tiempo de adquisición
-      BSF ADCON0,GO_NOT_DONE	  ;Con GO/DONE = 1 se toma la muestra e inicia la conversión
+      BSF ADCON0,GO_NOT_DONE	;Con GO/DONE = 1 se toma la muestra e inicia la conversión
 ESP:
       BTFSC ADCON0,GO_NOT_DONE  ;Espera a que termine la conversión (GO/DONE = 0);
       GOTO ESP
@@ -116,42 +116,42 @@ INCREMENTA_M:
       ;---------------------------Subrutina que inicializa el puerto serial y habilita la transmisión
 CONFIG_USART
       ;-Para 9600 Bauds con Fosc = 4 Mhz -> BRGH = 1, BRG16 = 0, SYNC = 0, SPRGH = 0x00 , SPRG = 0x19
-      BSF STATUS,RP0 			;Pasamos al banco 1
-      BSF TXSTA,BRGH 			;Pone el bit BRGH = 1
-      MOVLW 0x19			    ;Carga un 0x19 = 0001 1001 en SPRG
-      MOVWF SPBRG 			  ;
-      CLRF SPBRGH		    	;Limpia SPRGH, que es equivalente a SPRGH <- 0x00
-      BCF TXSTA,SYNC 			;Limpia el bit SYNC (Indica modo asíncrono)
-      BSF STATUS,RP1			;Pasamos al banco 3
+      BSF STATUS,RP0 		;Pasamos al banco 1
+      BSF TXSTA,BRGH 		;Pone el bit BRGH = 1
+      MOVLW 0x19		;Carga un 0x19 = 0001 1001 en SPRG
+      MOVWF SPBRG 		;
+      CLRF SPBRGH		;Limpia SPRGH, que es equivalente a SPRGH <- 0x00
+      BCF TXSTA,SYNC 		;Limpia el bit SYNC (Indica modo asíncrono)
+      BSF STATUS,RP1		;Pasamos al banco 3
       BCF BAUDCTL,BRG16		;El bit BRG16 se pone a 0
       ;----------------------------------------------------------------------------------------------
       ;-----------------------------------------------------Habilita el puerto serie y la transmisión
-      BCF STATUS,RP1			;Volvemos al banco 1
-      BSF TXSTA,TXEN 			;Pone bit TXEN = 1 (Habilita transmisión)}
-      BCF STATUS,RP0 			;Regresa al banco 0
-      BSF RCSTA,SPEN 			;Pone bit SPEN=1 (Habilita puerto serie)
+      BCF STATUS,RP1		;Volvemos al banco 1
+      BSF TXSTA,TXEN 		;Pone bit TXEN = 1 (Habilita transmisión)}
+      BCF STATUS,RP0 		;Regresa al banco 0
+      BSF RCSTA,SPEN 		;Pone bit SPEN=1 (Habilita puerto serie)
       ;----------------------------------------------------------------------------------------------
       RETURN
       ;--------Subrutina para transmitir un caracter (El caracter a transmitir debe encontrarse en W)
 TRANSMITE:
-      BSF STATUS,RP0 	     ;Se mueve al banco 1
+      BSF STATUS,RP0 	     	;Se mueve al banco 1
 ESPERA:
-      BTFSS TXSTA,TRMT 	   ;Checa el buffer de transmisión
-      GOTO ESPERA 			   ;Si esta ocupado, espera
-      BCF STATUS,RP0 			 ;Regresa al banco 0
-      MOVWF TXREG 			   ;Lo envía
-      RETURN				       ;Regresa a recepción
+      BTFSS TXSTA,TRMT 	   	;Checa el buffer de transmisión
+      GOTO ESPERA 		;Si esta ocupado, espera
+      BCF STATUS,RP0 		;Regresa al banco 0
+      MOVWF TXREG 		;Lo envía
+      RETURN			;Regresa a recepción
       ;----------------------------------------------------------------------------------------------
       ;---------------------------------------------------------------Subrutina que envía una palabra
 PALABRA_MAYOR:
-      MOVF apuntador,W		 ;Carga apuntador en W
-      ADDWF PCL,1 			   ;Salta W instrucciones adelante
+      MOVF apuntador,W		;Carga apuntador en W
+      ADDWF PCL,1 		;Salta W instrucciones adelante
       DT "arriba"
       RETURN
 
 PALABRA_MENOR:
-      MOVF apuntador,W		 ;Carga apuntador en W
-      ADDWF PCL,1 			   ;Salta W instrucciones adelante
+      MOVF apuntador,W		;Carga apuntador en W
+      ADDWF PCL,1 		;Salta W instrucciones adelante
       DT "abajo"
       RETURN
       ;----------------------------------------------------------------------------------------------
@@ -182,4 +182,4 @@ LOOP
       NOP
       RETURN
       ;----------------------------------------------------------------------------------------------
-	  END
+      END

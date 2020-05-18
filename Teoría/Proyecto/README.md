@@ -129,7 +129,7 @@ La simulación en Proteus es posible de 2 formas, al realizar el sistema en fisi
 La segunda consiste en utilizar el componente COMPIM y de igual manera indicar el puerto COM. Para averiguar el puerto, es necesario ir a la configuración bluetooth de la computadora y en más opciones se nos desplegará una ventana con pestañas, entre las cuales estará una con la leyenda *Puertos COM*.
 
 <div align = "center">
-  <img src="images/BluetoothConf.png" width="500">
+  <img src="images/BluetoothConf.PNG" width="500">
 </div>
 
 El dato que requerimos configurar cualquiera de los 2 componentes anteriores se encontrará ahí, en caso de no tener ningún puerto será necesario crear uno de tipo entrante.   

@@ -10,11 +10,9 @@ A continuación se muestran las conexiones del sistema propuesto:
 
 ![Conexiones Estacionamiento](images/ConexionesProyecto.PNG)
 
-El sistema cuenta con 2 servomotores que serán los actuadores y simularán la pluma a la entrada del estacionamiento, el despliegue y conteo de las vacantes se muestra en una pantalla LCD, la conexión bluetooth se llevará a cabo mediante el bluetooth de la PC
-
 ### Codificación
 
-###### LCD
+##### LCD
 Para el uso del LCD se utilizó la librería que provee Arduino, la cual puede importarse de la siguiente manera:
 
 ~~~
@@ -35,6 +33,13 @@ lcd.begin(16, 2);
 
 Ya que se han realizado las configuraciones iniciales,es posible trabajar con el LCD a través de funciones como
 print, setCursor y clear.
+
+Para el proyecto se generó una función llamada desplegar_vacantes, que escribe en la segunda línea del LCD las vacantes disponibles y se utiliza cada que hay una actualización.
+
+~~~
+
+~~~  
+
 
 ### Análisis de resultados
 

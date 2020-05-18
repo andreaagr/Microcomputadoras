@@ -147,27 +147,32 @@ La interfaz con todos los componentes disponibles se muestra a continuación (au
 El área de programación se realiza a través de bloques, lo primero que se realiza es declarar e inicializar las variables globales que va a utilizar la aplicación.
 
 <div align = "center">
-  <img src="VarG.PNG" width="300">
+  <img src="images/VarG.PNG" width="300">
 </div>
 
 Después se indica lo que ocurre cuando se inicializa la pantalla, que consistirá en ocultar algunos componentes y enviar un mensaje en caso de que el bluetooth se encuentre apagado.
 
 <div align = "center">
-  <img src="InitScreen.PNG" width="300">
+  <img src="images/InitScreen.PNG" width="300">
 </div>
 
 Con el componente ListPicker es posible desplegar una lista, una vez que se oprima. Sin embargo, primero se le debe indicar que elementos va a desplegar de la siguiente forma:
 
 <div align = "center">
-  <img src="ListP.PNG" width="300">
+  <img src="images/ListP.PNG" width="300">
 </div>
 
 Con lo anterior hemos indicado que al presionar el botón se mostrarán todos los dispositivos emparejados. Ahora se debe definir que es lo que va a ocurrir cuando se seleccione alguno, que consistirá en tratar de realizar la conexión y en caso de ser exitosa, colocar el status como conectado y hacer visibles determinados componentes.
 
 <div align = "center">
-  <img src="ListP2.PNG" width="300">
+  <img src="images/ListP2.PNG" width="300">
 </div>
 
+Como se mencionó anteriormente el número total de vacantes que tendrá el estacionamiento, será enviado desde la aplicación. El dato debe ser introducido en la caja de texto y al presionar el botón enviar: será transmitido al sistema, además de realizar las operaciones correspondientes en la aplicación para el despliegue de datos y actualización tanto de vistas como de variables.
+
+<div align = "center">
+  <img src="images/VacantesBoton.PNG" width="300">
+</div>
 
 
 ### Análisis de resultados

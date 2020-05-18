@@ -129,14 +129,25 @@ La simulación en Proteus es posible de 2 formas, al realizar el sistema en fisi
 La segunda consiste en utilizar el componente COMPIM y de igual manera indicar el puerto COM. Para averiguar el puerto, es necesario ir a la configuración bluetooth de la computadora y en más opciones se nos desplegará una ventana con pestañas, entre las cuales estará una con la leyenda *Puertos COM*.
 
 <div align = "center">
-  <img src="images/BluetoothConf.PNG" width="300">
+  <img src="images/BluetoothConf.PNG" width="350">
 </div>
 
-El dato que requerimos configurar cualquiera de los 2 componentes anteriores se encontrará ahí, en caso de no tener ningún puerto será necesario crear uno de tipo entrante.   
+El dato que requerimos para configurar cualquiera de los 2 componentes anteriores se encontrará ahí, en caso de no tener ningún puerto, será necesario crear uno de tipo entrante.   
 
 Realizando todo lo anterior será posible realizar la conexión, recepción y transmisión con otro dispositivo.
 
 #### Aplicación Android
+
+Se hizo uso de MIT App Inventor para la creación de la aplicación con la que se comunicará nuestro sistema. El proceso de creación consiste en una sección para el diseño de la interfaz y otra sección para la lógica de programación.
+
+La interfaz con todos los componentes disponibles se muestra a continuación (aunque no todos serán visibles desde el comienzo):
+
+<div align = "center">
+  <img src="images/Interfaz.PNG" width="500">
+</div>
+
+El área de programación 
+
 
 ### Análisis de resultados
 

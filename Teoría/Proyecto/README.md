@@ -142,11 +142,9 @@ Se hizo uso de MIT App Inventor para la creación de la aplicación con la que s
 
 La interfaz con todos los componentes disponibles se muestra a continuación (aunque no todos serán visibles desde el comienzo):
 
-<div align = "center">
-  <img src="images/Interfaz.PNG" width="500">
-</div>
+![Interfaz App](images/Interfaz.PNG)
 
-El área de programación 
+El área de programación
 
 
 ### Análisis de resultados

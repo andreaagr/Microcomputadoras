@@ -287,7 +287,7 @@ void loop() {
 
 ### Análisis de resultados
 
-El sistema logró realizarse de forma satisfactoria, recapítulando: se utilizarán 2 motores para la representación de plumas en el estacionamiento (una de entrada y una de salida), un LCD de 16 x 2 para el despliegue de las vacantes, un LDR como sensor detector de obstaculos y un módulo de conexión bluetooth.
+El sistema logró realizarse de forma satisfactoria, recapítulando: se utilizarón 2 motores para la representación de plumas en el estacionamiento (una de entrada y una de salida), un LCD de 16 x 2 para el despliegue de las vacantes, un LDR como sensor detector de obstaculos y un módulo de conexión bluetooth.
 
 Se desarrolló una aplicación en Android capaz de comunicarse con el sistema y se planteó la lógica tanto para ésta como para el sistema.
 

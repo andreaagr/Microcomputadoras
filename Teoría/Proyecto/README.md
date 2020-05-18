@@ -32,7 +32,21 @@ Adicional a las 2 situaciones anteriores, el sistema requiere de una inicializac
 
 
 ### Codificación
+
 #### LDR
+La detección de automóviles se realiza a partir de un LDR, considero que no es la elección más óptima sin embargo se eligió por su disponibilidad para la simulación en *Proteus*.
+
+Un LDR (Light Dependent Resistor) como su nombre lo indica, es un componente cuya resistencia varia en función de la luz que incide en él, de manera que a la salida tendremos más o menos voltaje.
+
+Como la salida consiste en un voltaje, debemos transformar este valor analógico a uno digital para poder utilizarlo en Arduino. Por lo que se deberá conectar en el área de *Analogic*, una vez hecha la conexión pedir el dato medido es muy sencillo, únicamente se hace uso de la instrucción analogRead.
+
+~~~
+int leer_sensor(){
+      return analogRead(ldrPin);
+}
+~~~
+
+El valor para cuando hay y no hay un obstáculo se tomó arbitrariamente, por lo que puede modificarse sin problemas.
 
 #### LCD
 Para el uso del LCD se utilizó la librería que provee Arduino, la cual puede importarse de la siguiente manera:
@@ -214,7 +228,8 @@ void permitir_entrada(){
       servomotor1.write(0);                               
       vacantes_disp --;                                     
       desplegar_vacantes();
-      Serial.print("e");                                    
+      Serial.print("e");
+
 }
 ~~~
 
@@ -222,6 +237,7 @@ void permitir_entrada(){
 
 ~~~
 void permitir_salida(){
+
       if(Serial.available() > 0){                           
             pluma = Serial.parseInt();
             if(pluma == 0){                                 
@@ -232,14 +248,16 @@ void permitir_salida(){
                   desplegar_vacantes();
             }
 
-      }   
+      }
+
 }
 ~~~
 
 ##### Inicializar
 
 ~~~
-void iniciar(){       
+void iniciar(){
+
       while(Serial.available() < 1){}                       
 
       vacantes_tot = Serial.parseInt();                     
@@ -250,6 +268,7 @@ void iniciar(){
       desplegar_vacantes();  
       servomotor1.write(0);                                 
       servomotor2.write(0);
+
 }
 ~~~
 
@@ -257,16 +276,14 @@ void iniciar(){
 
 ~~~
 void loop() {
+
       permitir_salida();
       if(leer_sensor() > 1000 and vacantes_disp > 0){
               permitir_entrada();
-      }   
+      }
+
 }
 ~~~
-
-
-
-
 
 ### Análisis de resultados
 

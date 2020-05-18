@@ -32,6 +32,7 @@ Adicional a las 2 situaciones anteriores, el sistema requiere de una inicializac
 
 
 ### Codificación
+#### LDR
 
 #### LCD
 Para el uso del LCD se utilizó la librería que provee Arduino, la cual puede importarse de la siguiente manera:
@@ -197,6 +198,68 @@ Finalmente para desconectar el sistema de la aplicación se hace uso del botón 
 <div align = "center">
   <img src="images/Desconectar.PNG" width="400">
 </div>
+
+#### Codificación de las tareas
+
+Partiendo de los diagramas de flujo mostrados en *Análisis del problema*,ahora se muestra su implementación en Arduino.
+
+- Entrada de automóviles
+~~~
+void permitir_entrada(){
+
+      servomotor1.write(90);
+      while(leer_sensor() > 583){}                          
+      delay(3000);                                          
+      servomotor1.write(0);                               
+      vacantes_disp --;                                     
+      desplegar_vacantes();
+      Serial.print("e");                                    
+}
+~~~
+- Salida de automóviles
+~~~
+void permitir_salida(){
+      if(Serial.available() > 0){                           
+            pluma = Serial.parseInt();
+            if(pluma == 0){                                 
+                  servomotor2.write(0);  
+            }else if(pluma == 1){                           
+                  servomotor2.write(90);
+                  vacantes_disp ++;
+                  desplegar_vacantes();
+            }
+
+      }   
+}
+~~~
+- Inicializar
+~~~
+void iniciar(){       
+      while(Serial.available() < 1){}                       
+
+      vacantes_tot = Serial.parseInt();                     
+      vacantes_disp = vacantes_tot;
+      v1.concat(vacantes_tot);    
+      lcd.setCursor(0, 0);  
+      lcd.print(v1);  
+      desplegar_vacantes();  
+      servomotor1.write(0);                                 
+      servomotor2.write(0);
+}
+~~~
+- Loop
+~~~
+void loop() {
+      permitir_salida();
+      if(leer_sensor() > 1000 and vacantes_disp > 0){
+              permitir_entrada();
+      }   
+}
+~~~
+
+
+
+
 
 ### Análisis de resultados
 

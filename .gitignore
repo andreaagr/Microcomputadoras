@@ -4,3 +4,7 @@
 *.esym
 *.bak
 *.tre
+*.cof
+*.lst
+*.sta
+*.sym

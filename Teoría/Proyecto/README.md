@@ -71,20 +71,40 @@ Las vacantes totales también se escriben en la pantalla LCD, pero esta acción 
 ~~~
 void iniciar(){
 
-
-      while(Serial.available() < 1){}                       
-
-      vacantes_tot = Serial.parseInt();                      
-      vacantes_disp = vacantes_tot;
+      //Leer dato del puerto serie y guardarlo en vacantes_tot
       v1.concat(vacantes_tot);    
       lcd.setCursor(0, 0);  
       lcd.print(v1);  
       desplegar_vacantes();  
-      servomotor1.write(0);                                 
-      servomotor2.write(0);
 
 }
 ~~~
+
+#### Servomotor
+Arduino posee también una librería para trabajar con servomotores, que se importa con la siguiente línea:
+
+~~~
+#include <Servo.h>
+~~~
+
+El uso es sencillo,únicamente se debe definir la variable de tipo Servo y posteriormente en la función setup inidicar el pin en el que está conectado.
+
+Para el proyecto se utilizaron 2 servomotores que están conectados al pin 9 y 10, la definición se realiza de la siguiente forma:
+
+~~~
+Servo servomotor1,servomotor2;
+void setup() {
+
+      //Otras configuraciones
+      servomotor1.attach(9);                               
+      servomotor2.attach(10);                               
+
+}
+~~~
+
+Finalmente para mover los servomotores se utiliza la función write, en donde el parámetro que recibe es el ángulo al que se moverá el servo. En el proyecto se utiliza constatemente esta función para el movimiento de la pluma.
+
+Internamente lo que realiza la función write, consiste en generar una señal PWM con un pulso de trabajo entre 1 ms y 2 ms. Dependiendo del valor se determina el giro del servomotor, es importante mencionar que el periodo de la señal es de 20 ms lo que indicará la velocidad del servomotor.   
 
 ### Análisis de resultados
 

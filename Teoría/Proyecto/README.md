@@ -287,4 +287,16 @@ void loop() {
 
 ### Análisis de resultados
 
+El sistema logró realizarse de forma satisfactoria, recapítulando: se utilizarán 2 motores para la representación de plumas en el estacionamiento (una de entrada y una de salida), un LCD de 16 x 2 para el despliegue de las vacantes, un LDR como sensor detector de obstaculos y un módulo de conexión bluetooth.
+
+Se desarrolló una aplicación en Android capaz de comunicarse con el sistema y se planteó la lógica tanto para ésta como para el sistema.
+
+Por lo que es posible afirmar que se cumplieron los objetivos del proyecto ya que se pusieron en práctica los diversos conceptos y conocimientos aprendidos en el curso.
+
 ### Conclusiones
+
+Fue posible realizar un sistema funcional a partir de la propuesta de proyecto, aunque me hubiera gustado realizar el proyecto final para el microcontrolador PIC que se utilizó a lo largo del curso.
+
+Esa era la idea inicial, sin embargo tuve algunos problemas con la generación de la señal PWM. Después de eso elegí Arduino porque ya había tenido un acercamiento anteriormente con esta plataforma y porque la comunidad e información disponible es muy grande.
+
+También hubo algunas limitaciones por la parte de la simulación, como sensor quería utilizar un led infrarrojo emisor y receptor, pero no se encontraba en *Proteus*. Aún así estoy satisfecha con el resultado y me divertí mucho realizando el proyecto.  

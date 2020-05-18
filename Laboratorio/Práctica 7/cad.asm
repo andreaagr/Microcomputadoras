@@ -1,9 +1,9 @@
 ;####################################################################################################
 ;#                                                                                                  #
 ;#  Programa que lee una señal analógica en el canal cero del convertidor analógico digital(AN0).   #
-;#  Cuando el voltaje de entrada supera los 3.5[V] se enciende un el pin RB0 y se envía por la      #
-;#  terminal serial el mensaje "arriba", cuando el voltaje es menor o igual a 3.5[V] se apaga el    #
-;#  pin RB0 y se envía el mensaje "abajo".                                                          #
+;#  Cuando el voltaje de entrada supera los 3.5[V] se enciende un led en el pin RB0 y se envía por  #
+;#  la terminal serial el mensaje "arriba", cuando el voltaje es menor o igual a 3.5[V] se apaga    #
+;#  el led del pin RB0 y se envía el mensaje "abajo".                                               #
 ;#                                                                                                  #
 ;####################################################################################################
 

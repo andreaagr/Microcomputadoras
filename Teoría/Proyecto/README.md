@@ -18,10 +18,16 @@ Cuando un auto desea ingresar al estacionamiento, su presencia es detectada por 
   <img src="images/EntradaAuto.png" width="600">
 </div>
 
-Para la salida de automóviles, se recibe un dato proveniente de una aplicación Android que puede ser 1 o 0. Depeniendo del dato adquirido se levantará o bajará la pluma del estacionamiento, esto se ilustra a continuación:
+Para la salida de automóviles, se recibe un dato proveniente de una aplicación Android que puede ser 1 o 0. Depeniendo del dato adquirido se levantará o bajará la pluma del estacionamiento, este proceso se ilustra a continuación:
 
 <div align = "center">
   <img src="images/SalidaAuto.png" width="600">
+</div>
+
+Adicionalmente a las 2 situaciones anteriores el sistema requiere de una inicialización, ya que se necesita obtener el dato de las vacantes totales que es enviado desde la aplicación Android además de realizar otras acciones. El diagrama de flujo correspondiente es el siguiente:
+
+<div align = "center">
+  <img src="images/Inicializar.png" width="600">
 </div>
 
 

@@ -87,9 +87,9 @@ Arduino posee también una librería para trabajar con servomotores, que se impo
 #include <Servo.h>
 ~~~
 
-El uso es sencillo,únicamente se debe definir la variable de tipo Servo y posteriormente en la función setup inidicar el pin en el que está conectado.
+El uso es sencillo,únicamente se debe definir la variable de tipo Servo y posteriormente en la función setup indicar el pin en el que está conectado.
 
-Para el proyecto se utilizaron 2 servomotores que están conectados al pin 9 y 10, la definición se realiza de la siguiente forma:
+Para el proyecto se utilizaron 2 servomotores que se conectaron al pin 9 y 10 respectivamente, la definición se realiza de la siguiente forma:
 
 ~~~
 Servo servomotor1,servomotor2;
@@ -106,6 +106,35 @@ Finalmente para mover los servomotores se utiliza la función write, en donde el
 
 Internamente lo que realiza la función write, consiste en generar una señal PWM con un pulso de trabajo entre 1 ms y 2 ms. Dependiendo del valor se determina el giro del servomotor, es importante mencionar que el periodo de la señal es de 20 ms lo que indicará la velocidad del servomotor.   
 
+#### Bluetooth
+
+A través del bluetooth es posible la comunicación con otros dispositivos, para el proyecto se realizó una conexión con un celular Android.
+
+La recepción y transmisión de datos hacen uso del puerto serial, por lo que el primer paso a realizar es iniciar e indicar la velocidad a la que trabajará éste en bauds. Esta acción se realiza en la función setup y en nuestro caso será de 9600.
+~~~
+void setup() {
+
+      //Otras configuraciones
+      Serial.begin(9600);                                   
+
+}
+~~~
+
+Para enviar un dato se utiliza la función print que recibe como parámetro el dato que se quiere transmitir. En el proyecto se utiliza esta función cuando se envía la letra "e" al celular, para que éste registre la hora de entrada del automóvil.
+
+Para recibir un dato se tienen más opciones disponibles, en nuestro caso se recibe 0,1 y el número de vacantes totales. De manera que nos interesa tratarlo como número así que se utiliza la función parseInt.
+
+La simulación en Proteus es posible de 2 formas, al realizar el sistema en fisico se tendría que hacer uso de un módulo bluetooth. Así que la primera es utilizar ese componente en Proteus e indicarle el puerto COM del bluetooth de la computadora.
+
+La segunda consiste en utilizar el componente COMPIM y de igual manera indicar el puerto COM. Para averiguar el puerto, es necesario ir a la configuración bluetooth de la computadora y en más opciones se nos desplegará una ventana con pestañas, entre las cuales estará una con la leyenda *Puertos COM*.
+
+<div align = "center">
+  <img src="images/BluetoothConf.png" width="500">
+</div>
+
+El dato que requerimos configurar cualquiera de los 2 componentes anteriores se encontrará ahí, en caso de no tener ningún puerto será necesario crear uno de tipo entrante.   
+
+Realizando todo lo anterior será posible realizar la conexión, recepción y transmisión con otro dispositivo.
 ### Análisis de resultados
 
 ### Conclusiones

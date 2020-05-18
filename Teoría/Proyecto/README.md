@@ -144,13 +144,13 @@ La interfaz con todos los componentes disponibles se muestra a continuación (au
 
 ![Interfaz App](images/Interfaz.PNG)
 
-El área de programación se realiza a través de bloques, lo primero que se realiza es declarar e inicializar las variables globales que va a utilizar la aplicación.
+El área de programación se realiza a través de bloques, el primer paso que se realizó fue declarar e inicializar las variables que utilizará la aplicación.
 
 <div align = "center">
   <img src="images/VarG.PNG" width="400">
 </div>
 
-Después se indica lo que ocurre cuando se inicializa la pantalla, que consistirá en ocultar algunos componentes y enviar un mensaje en caso de que el bluetooth se encuentre apagado.
+Después se indicó lo que ocurrirá cuando se inicializa la pantalla,lo cual consiste en ocultar algunos componentes y enviar un mensaje en caso de que el bluetooth se encuentre apagado.
 
 <div align = "center">
   <img src="images/InitScreen.PNG" width="400">
@@ -162,7 +162,7 @@ Con el componente ListPicker es posible desplegar una lista, una vez que se opri
   <img src="images/ListP.PNG" width="400">
 </div>
 
-Con lo anterior hemos indicado que al presionar el botón se mostrarán todos los dispositivos emparejados. Ahora se debe definir que es lo que va a ocurrir cuando se seleccione alguno, que consistirá en tratar de realizar la conexión y en caso de ser exitosa, colocar el status como conectado y hacer visibles determinados componentes.
+Con lo anterior se indicó que al presionar el botón se mostrarán todos los dispositivos emparejados. Ahora se debe definir que es lo que va a ocurrir cuando se seleccione alguno, que consistirá en tratar de realizar la conexión y en caso de ser exitosa, colocar el status como conectado y hacer visibles determinados componentes.
 
 <div align = "center">
   <img src="images/ListP2.PNG" width="400">

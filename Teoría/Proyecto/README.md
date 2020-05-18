@@ -14,7 +14,7 @@ En nuestro sistema tenemos 2 situaciones principales: La entrada y la salida de 
 
 Cuando un auto desea ingresar al estacionamiento, su presencia es detectada por el sensor. Si se tienen vacantes disponibles se levantará la pluma y se permitirá el acceso. La descripción de cómo se comporta el sistema, de manera más detallada, para la entrada de automóviles se ilustra en el siguiente diagrama de flujo:  
 
-<img src="images/EntradaAuto.png" width="200">
+<img src="images/EntradaAuto.png" width="700" align= "center">
 
 
 

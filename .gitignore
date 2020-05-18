@@ -1,0 +1,6 @@
+### Assembler ###
+
+*.err
+*.esym
+*.bak
+*.tre

@@ -10,9 +10,17 @@ A continuación se muestran las conexiones del sistema propuesto:
 
 ![Conexiones Estacionamiento](images/ConexionesProyecto.PNG)
 
+En nuestro sistema tenemos 2 situaciones principales: La entrada y la salida de un auto.
+
+Cuando un auto desea ingresar al estacionamiento, su presencia es detectada por el sensor. Si se tienen vacantes disponibles se levantará la pluma y se permitirá el acceso. La descripción de cómo se comporta el sistema, de manera más detallada, para la entrada de automóviles se ilustra en el siguiente diagrama de flujo:  
+
+![Entrada de autos](images/EntradaAuto.png)
+
+
+
 ### Codificación
 
-##### LCD
+#### LCD
 Para el uso del LCD se utilizó la librería que provee Arduino, la cual puede importarse de la siguiente manera:
 
 ~~~

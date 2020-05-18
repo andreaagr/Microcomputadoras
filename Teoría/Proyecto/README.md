@@ -8,7 +8,8 @@ Elaborado por: García Ruiz Andrea
 ### Análisis del problema
 A continuación se muestran las conexiones del sistema propuesto:
 
-![Conexiones Estacionamiento](/images/ConexionesProyecto.PNG)
+![Conexiones Estacionamiento](images/ConexionesProyecto.PNG)
+
 
 El sistema cuenta con 2 servomotores que serán los actuadores y simularán la pluma a la entrada del estacionamiento, el despliegue y conteo de las vacantes se muestra en una pantalla LCD,
 

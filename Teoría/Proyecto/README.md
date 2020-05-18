@@ -34,11 +34,11 @@ Adicional a las 2 situaciones anteriores, el sistema requiere de una inicializac
 ### Codificación
 
 #### LDR
-La detección de automóviles se realiza a partir de un LDR, considero que no es la elección más óptima sin embargo se eligió por su disponibilidad para la simulación en *Proteus*.
+La detección de automóviles se realiza a partir de un LDR, considero que no es la elección más óptima, sin embargo se eligió por su disponibilidad para la simulación en *Proteus*.
 
 Un LDR (Light Dependent Resistor) como su nombre lo indica, es un componente cuya resistencia varia en función de la luz que incide en él, de manera que a la salida tendremos más o menos voltaje.
 
-Como la salida consiste en un voltaje, debemos transformar este valor analógico a uno digital para poder utilizarlo en Arduino. Por lo que se deberá conectar en el área de *Analogic*, una vez hecha la conexión pedir el dato medido es muy sencillo, únicamente se hace uso de la instrucción analogRead.
+Como la salida consiste en un voltaje, debemos transformar este valor analógico a uno digital para poder utilizarlo en Arduino. Por lo que se deberá conectar en el área de *Analogic* y una vez hecha la conexión, pedir el dato medido es muy sencillo, únicamente se hace uso de la instrucción analogRead.
 
 ~~~
 int leer_sensor(){

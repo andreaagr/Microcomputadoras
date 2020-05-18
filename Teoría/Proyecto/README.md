@@ -14,7 +14,7 @@ En nuestro sistema tenemos 2 situaciones principales: La entrada y la salida de 
 
 Cuando un auto desea ingresar al estacionamiento, su presencia es detectada por el sensor. Si se tienen vacantes disponibles se levantará la pluma y se permitirá el acceso. La descripción de cómo se comporta el sistema, de manera más detallada, para la entrada de automóviles se ilustra en el siguiente diagrama de flujo:  
 
-![Entrada de autos](images/EntradaAuto.png)
+!![pic][logo]{.classname}[Entrada de autos](images/EntradaAuto.png)
 
 
 
@@ -52,3 +52,11 @@ Para el proyecto se generó una función llamada desplegar_vacantes, que escribe
 ### Análisis de resultados
 
 ### Conclusiones
+
+[logo]: (picurl)
+
+<style type="text/css">
+    .classname{
+        width: 200px;
+    }
+</style>

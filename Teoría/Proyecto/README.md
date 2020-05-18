@@ -203,7 +203,7 @@ Finalmente para desconectar el sistema de la aplicación se hace uso del botón 
 
 Partiendo de los diagramas de flujo mostrados en *Análisis del problema*,ahora se muestra su implementación en Arduino.
 
-- Entrada de automóviles
+##### Entrada de automóviles
 ~~~
 void permitir_entrada(){
 
@@ -216,7 +216,7 @@ void permitir_entrada(){
       Serial.print("e");                                    
 }
 ~~~
-- Salida de automóviles
+##### Salida de automóviles
 ~~~
 void permitir_salida(){
       if(Serial.available() > 0){                           
@@ -232,7 +232,7 @@ void permitir_salida(){
       }   
 }
 ~~~
-- Inicializar
+##### Inicializar
 ~~~
 void iniciar(){       
       while(Serial.available() < 1){}                       
@@ -247,7 +247,7 @@ void iniciar(){
       servomotor2.write(0);
 }
 ~~~
-- Loop
+##### Loop
 ~~~
 void loop() {
       permitir_salida();

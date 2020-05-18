@@ -40,27 +40,51 @@ Para el uso del LCD se utilizó la librería que provee Arduino, la cual puede i
 #include <LiquidCrystal.h>
 ~~~
 
-Con el fin de escribir mensajes en el LCD, el primer paso es definir una variable de tipo LiquidCrystal e indicarle los pines que se están usando para RS, E, D4, D5, D6 y D7. Lo anterior se le pasará como parámetro en ese orden.
+Con el fin de escribir mensajes en el LCD, el primer paso es definir una variable de tipo LiquidCrystal e indicar los pines que se están usando para RS, E, D4, D5, D6 y D7. Lo anterior se le pasará como parámetro en ese orden.
 
 ~~~
 LiquidCrystal lcd = LiquidCrystal(2, 3, 4, 5, 6, 7);
 ~~~  
 
-Una vez que se realizó lo anterior en la función setup, se inicializará el LCD y se le deberá indicar la cantidad de renglones y columnas que tiene nuestra LCD. Por ejemplo la siguiente línea indica que se está usando un LCD de 16 columnas y 2 renglones.
+Una vez que se realiza lo anterior, en la función setup se debe inicializar el LCD indicando la cantidad de renglones y columnas que tiene. Por ejemplo la siguiente línea indica que se está usando un LCD de 16 columnas y 2 renglones.
 
 ~~~
 lcd.begin(16, 2);
 ~~~  
 
-Ya que se han realizado las configuraciones iniciales,es posible trabajar con el LCD a través de funciones como
+Ya que se realizaron las configuraciones iniciales,es posible trabajar con el LCD a través de funciones como
 print, setCursor y clear.
 
 Para el proyecto se generó una función llamada desplegar_vacantes, que escribe en la segunda línea del LCD las vacantes disponibles y se utiliza cada que hay una actualización.
 
 ~~~
-
+void desplegar_vacantes(){
+      String v2 = "Disponibles:";
+      v2.concat(vacantes_disp);
+      lcd.setCursor(0,1);
+      lcd.print(v2);
+}
 ~~~  
 
+Las vacantes totales también se escriben en la pantalla LCD, pero esta acción se realiza después de adquirir el dato por bluetooth en la función iniciar.
+
+~~~
+void iniciar(){
+
+
+      while(Serial.available() < 1){}                       
+
+      vacantes_tot = Serial.parseInt();                      
+      vacantes_disp = vacantes_tot;
+      v1.concat(vacantes_tot);    
+      lcd.setCursor(0, 0);  
+      lcd.print(v1);  
+      desplegar_vacantes();  
+      servomotor1.write(0);                                 
+      servomotor2.write(0);
+
+}
+~~~
 
 ### Análisis de resultados
 

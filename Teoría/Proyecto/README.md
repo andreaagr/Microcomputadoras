@@ -24,10 +24,10 @@ Para la salida de automóviles, se recibe un dato proveniente de una aplicación
   <img src="images/SalidaAuto.png" width="650">
 </div>
 
-Adicionalmente a las 2 situaciones anteriores el sistema requiere de una inicialización, ya que se necesita obtener el dato de las vacantes totales que es enviado desde la aplicación Android además de realizar otras acciones. El diagrama de flujo correspondiente es el siguiente:
+Adicional a las 2 situaciones anteriores, el sistema requiere de una inicialización ya que se necesita obtener el dato de las vacantes totales, que es enviado desde la aplicación Android además de realizar otras acciones. El diagrama de flujo correspondiente es el siguiente:
 
 <div align = "center">
-  <img src="images/Inicializar.png" width="400">
+  <img src="images/Inicializar.png" width="370">
 </div>
 
 
@@ -65,11 +65,3 @@ Para el proyecto se generó una función llamada desplegar_vacantes, que escribe
 ### Análisis de resultados
 
 ### Conclusiones
-
-[logo]: (picurl)
-
-<style type="text/css">
-    .classname{
-        width: 200px;
-    }
-</style>

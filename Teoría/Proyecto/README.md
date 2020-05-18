@@ -10,12 +10,18 @@ A continuación se muestran las conexiones del sistema propuesto:
 
 ![Conexiones Estacionamiento](images/ConexionesProyecto.PNG)
 
-En nuestro sistema tenemos 2 situaciones principales: La entrada y la salida de un auto.
+En nuestro sistema tenemos 2 situaciones principales: la entrada y la salida de un auto.
 
-Cuando un auto desea ingresar al estacionamiento, su presencia es detectada por el sensor. Si se tienen vacantes disponibles se levantará la pluma y se permitirá el acceso. La descripción de cómo se comporta el sistema, de manera más detallada, para la entrada de automóviles se ilustra en el siguiente diagrama de flujo:  
+Cuando un auto desea ingresar al estacionamiento, su presencia es detectada por el sensor. Si se tienen vacantes disponibles se levantará la pluma y se permitirá el acceso. La descripción más detallada de cómo se comporta el sistema para la entrada de automóviles se ilustra en el siguiente diagrama de flujo:  
 
 <div align = "center">
   <img src="images/EntradaAuto.png" width="600">
+</div>
+
+Para la salida de automóviles, se recibe un dato proveniente de una aplicación Android que puede ser 1 o 0. Depeniendo del dato adquirido se levantará o bajará la pluma del estacionamiento, esto se ilustra a continuación:
+
+<div align = "center">
+  <img src="images/SalidaAuto.png" width="600">
 </div>
 
 

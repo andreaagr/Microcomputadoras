@@ -162,13 +162,13 @@ Con el componente ListPicker es posible desplegar una lista, una vez que se opri
   <img src="images/ListP.PNG" width="400">
 </div>
 
-Con lo anterior se indicó que al presionar el botón se mostrarán todos los dispositivos emparejados. Ahora se debe definir que es lo que va a ocurrir cuando se seleccione alguno, que consistirá en tratar de realizar la conexión y en caso de ser exitosa, colocar el status como conectado y hacer visibles determinados componentes.
+Con lo anterior se indicó que al presionar el botón se mostrarán todos los dispositivos emparejados. Ahora se debe definir que es lo que va a ocurrir cuando se seleccione alguno, que consistirá en tratar de realizar la conexión y en caso de ser exitosa, colocar el status como *Conectado* y hacer visibles determinados componentes.
 
 <div align = "center">
   <img src="images/ListP2.PNG" width="400">
 </div>
 
-Como se mencionó anteriormente el número total de vacantes que tendrá el estacionamiento, será enviado desde la aplicación. El dato debe ser introducido en la caja de texto y al presionar el botón enviar: será transmitido al sistema, además de realizar las operaciones correspondientes en la aplicación para el despliegue de datos y actualización tanto de vistas como de variables.
+Como se mencionó anteriormente el número total de vacantes que tendrá el estacionamiento, será enviado desde la aplicación. El dato debe ser introducido en la caja de texto y al presionar el botón *bt_env_vac*: será transmitido al sistema, además de realizar las operaciones correspondientes en la aplicación para el despliegue de datos y actualización tanto de vistas como de variables.
 
 <div align = "center">
   <img src="images/VacantesBoton.PNG" width="400">
@@ -182,7 +182,7 @@ Otra de las tareas importantes de la aplicación consiste en registrar la entrad
 
 También es posible subir y bajar la pluma del estacionamiento, enviando una señal desde la aplicación. Los botones subir y bajar son mutuamente excluyentes (únicamente uno de los 2 puede estar habilitado a la vez).
 
-El funcionamiento para cuando estos botones son presionados es similar, ambos envían ya sea 1 o 0. La diferencia radica cuando se presiona bajar ya que se aumentan las vacantes_disponibles y se registra el evento de salida. Ambas secciones se muestran a continuación:
+El funcionamiento para cuando estos botones son presionados es similar, ambos envían ya sea 1 o 0. La diferencia radica cuando se presiona *bt_bajar* ya que se aumentan las vacantes disponibles y se registra el evento de salida. Ambas secciones se muestran a continuación:
 
 <div align = "center">
   <img src="images/SubirB.PNG" width="400">
@@ -192,7 +192,7 @@ El funcionamiento para cuando estos botones son presionados es similar, ambos en
   <img src="images/BajarB.PNG" width="400">
 </div>
 
-Finalmente para desconectar el sistema de la aplicación se hace uso del botón desconectar, que cierra la conexión y oculta algunas vistas.
+Finalmente para desconectar el sistema de la aplicación se hace uso del botón *Desconectar*, que cierra la conexión y oculta algunas vistas.
 
 <div align = "center">
   <img src="images/Desconectar.PNG" width="400">
